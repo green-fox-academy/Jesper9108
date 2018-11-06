@@ -12,7 +12,9 @@ public class TakesLonger {
         List<String> partAddConverted = new LinkedList<>(Arrays.asList(partAdd.split(" ")));
 
 
-        quoteConverted.addAll(quoteConverted.indexOf("It")+1 , partAddConverted);
+        quoteConverted.addAll(quoteConverted.indexOf("It") + 1, partAddConverted);
+
+        System.out.println(quoteConverted);
 
         quote = String.join(" ", quoteConverted);
 

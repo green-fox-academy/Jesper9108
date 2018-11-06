@@ -8,12 +8,12 @@ public class Matchmaking {
         ArrayList<String> girls = new ArrayList<>(Arrays.asList("Eve", "Ashley", "Claire", "Kat", "Jane"));
         ArrayList<String> boys = new ArrayList<>(Arrays.asList("Joe", "Fred", "Tom", "Todd", "Neef", "Jeff"));
 
-        System.out.println(makingMatches( girls, boys));
+        System.out.println(makingMatches(girls, boys));
     }
 
-    public static List<String> makingMatches(List<String> user1, List<String> user2){
+    public static List<String> makingMatches(List<String> user1, List<String> user2) {
         List<String> matched = new LinkedList<>();
-        for (int i =0; i < user1.size(); i++){
+        for (int i = 0; i < user1.size(); i++) {
             matched.add(user1.get(i));
             matched.add(user2.get(i));
         }

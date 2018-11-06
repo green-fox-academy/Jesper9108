@@ -8,10 +8,10 @@ public class ElementFinder {
         System.out.println(containsSeven(arrayList));
     }
 
-    public static String containsSeven( ArrayList<Integer> userInput){
+    public static String containsSeven(ArrayList<Integer> userInput) {
         String answer = "Noooooo";
-        for( int i = 0; i < userInput.size(); i++){
-            if (userInput.get(i) == 7){
+        for (int i = 0; i < userInput.size(); i++) {
+            if (userInput.get(i) == 7) {
                 answer = "Hoorray!";
             }
         }

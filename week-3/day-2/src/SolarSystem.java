@@ -9,7 +9,7 @@ public class SolarSystem {
         putSaturn(planetList);
     }
 
-    public static void putSaturn(List<String> userInput){
+    public static void putSaturn(List<String> userInput) {
         userInput.add(5, "Saturn");
         System.out.println(userInput);
 

@@ -9,8 +9,8 @@ public class AppendLetter {
 
     }
 
-    public static void appendA (List<String> userInput){
-        for (int i = 0; i <userInput.size(); i++){
+    public static void appendA(List<String> userInput) {
+        for (int i = 0; i < userInput.size(); i++) {
             userInput.set(i, userInput.get(i) + "a");
         }
         System.out.println(userInput);
