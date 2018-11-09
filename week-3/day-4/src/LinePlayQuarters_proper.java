@@ -13,7 +13,7 @@ public class LinePlayQuarters_proper {
 
         int xCoordinate = 0;
         int yCoordinate = 0;
-        int sideLength = WIDTH/15;
+        int sideLength = WIDTH / 10;
 
         int numRow = WIDTH / sideLength;
         int numColumn = numRow;
@@ -23,7 +23,7 @@ public class LinePlayQuarters_proper {
         while (counter < numColumn) {
 
             for (int i = 0; i < numRow; i++) {
-                Lineplay(graphics, xCoordinate, yCoordinate, sideLength, 10);
+                Lineplay(graphics, xCoordinate, yCoordinate, sideLength, 50);
 
                 xCoordinate+= sideLength;
             }
@@ -34,31 +34,33 @@ public class LinePlayQuarters_proper {
             counter++;
         }
 
+
+
     }
 
     public static void Lineplay(Graphics graphics, int cornerX, int cornerY, int size, int numberLines) {
         int xStart = cornerX;
         int yStart = cornerY;
         int xEnd = cornerX + size;
-        int yEnd = cornerY + size / 10;
+        int yEnd = cornerY + size / numberLines;
 
-        for (int i = 0; i < numberLines; i++) {
+        for (int i = 0; i < size; i += size / numberLines) {
             graphics.setColor(Color.MAGENTA);
             graphics.drawLine(xStart, yStart, xEnd, yEnd);
-            xStart += size / 10;
-            yEnd += size / 10;
+            xStart += size / numberLines;
+            yEnd += size / numberLines;
         }
         xStart = cornerX;
         yStart = cornerY;
-        xEnd = cornerX + size / 10;
+        xEnd = cornerX + size / numberLines;
         yEnd = cornerY + size;
 
-        for (int i = 0; i < numberLines; i++) {
+        for (int i = 0; i < size; i += size / numberLines) {
             graphics.setColor(Color.GREEN);
             graphics.drawLine(xStart, yStart, xEnd, yEnd);
 
-            yStart += size / 10;
-            xEnd += size / 10;
+            yStart += size / numberLines;
+            xEnd += size / numberLines;
         }
     }
 
