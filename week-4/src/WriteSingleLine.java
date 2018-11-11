@@ -7,17 +7,21 @@ import java.util.List;
 public class WriteSingleLine {
     public static void main(String[] args) {
 
-        try{
-            List<String> name = new ArrayList<>();
-            name.add ("Zsolt Jenofi");
-            name.add("Petra Schrantz");
+        try {
+            List<String> names = new ArrayList<>();
+            names.add("Zsolt Jenofi");
+            names.add("Petra Schrantz");
+            
 
             Path path = Paths.get("myname.txt");
-            Files.write(path, name);
+
+            if (Files.isWritable(path)) {
+                Files.write(path, names);
+            }
 
             System.out.println(Files.readAllLines(path));
-        }catch (Exception e){
-            System.out.println("Valami");
+        } catch (Exception e) {
+            System.out.println("Unable to write file: myname.txt");
         }
     }
 }
