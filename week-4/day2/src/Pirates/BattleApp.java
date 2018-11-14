@@ -4,13 +4,17 @@ public class BattleApp {
 
     public static void main(String[] args) {
 
-        Ship BlackPearl = new Ship();
-        Ship FlyingDutchman = new Ship();
+        Ship BlackPearl = new Ship("Black Pearl");
 
         BlackPearl.fillShip();
-        FlyingDutchman.fillShip();
+        BlackPearl.dataShip(BlackPearl);
 
-        System.out.println(BlackPearl.shipBattle(FlyingDutchman));
+
+
+
+
+
+
 
     }
 }
