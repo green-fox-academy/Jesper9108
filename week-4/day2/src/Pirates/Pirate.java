@@ -22,7 +22,7 @@ public class Pirate {
 
     void drinkSomeRum() {
         intoxiCounter++;
-        System.out.println(name + " jus' drank some rum");
+        //System.out.println(name + " jus' drank some rum");
     }
 
     void howsitGoingMate() {

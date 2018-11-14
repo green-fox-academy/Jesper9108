@@ -8,6 +8,10 @@ public class Ship {
     String name;
 
 
+    public Ship() {
+
+    }
+
     public Ship(String name) {
         this.name = name;
         System.out.println(name + " be now on water!");
@@ -15,7 +19,7 @@ public class Ship {
     }
 
     void fillShip() {
-        crew.add(new Pirate(false));
+        crew.add(new Pirate(true));
 
         int numCrew = (int) (Math.random() * 15) + 1;
 
@@ -23,35 +27,45 @@ public class Ship {
             crew.add(new Pirate(false));
         }
 
-        System.out.println(name + " has been filled wit' one Captain 'n crew o' " + (numCrew));
+        //System.out.println(name + " has been filled wit' one Captain 'n crew o' " + (numCrew));
+        //System.out.println();
     }
 
 
     boolean shipBattle(Ship ship) {
-        int counterShip = 0;
-        int counter = 0;
 
+        int randomRum = (int) ((Math.random() * 5) + 1);
+        int maxRum = 5;
 
-        for (int i = 0; i < ship.crew.size(); i++) {
-            if (ship.crew.get(i).alive) {
-                counterShip++;
+        if (battleScore() > ship.battleScore()) {
+            //System.out.println("Th' winner o' th' battle be " + name);
+            //int crewLoss = (int) (Math.random() * ship.crew.size() + 1);
+            if ((crew.get(0).intoxiCounter + randomRum) < maxRum) {
+                crew.get(0).intoxiCounter += randomRum;
+            } else {
+                crew.get(0).intoxiCounter = maxRum;
             }
-        }
-        for (int i = 0; i < crew.size(); i++) {
-            if (crew.get(i).alive) {
-                counter++;
-            }
-        }
-
-        if (counter > counterShip) {
             return true;
+
         } else {
+            //System.out.println("Th' winner o' th' battle be " + ship.name);
+            if ((ship.crew.get(0).intoxiCounter + randomRum) < maxRum) {
+                ship.crew.get(0).intoxiCounter += randomRum;
+            } else {
+                ship.crew.get(0).intoxiCounter = maxRum;
+            }
             return false;
         }
 
     }
 
-    private int battlescore(Ship ship) {
+    void captainDrinkRum() {
+        crew.get(0).drinkSomeRum();
+        System.out.println("The captain of " + name + " just gobbled down some rum");
+        System.out.println();
+    }
+
+    int battleScore() {
         int score;
         int counterAlive = 0;
 
@@ -66,12 +80,12 @@ public class Ship {
 
     }
 
-    void dataShip(Ship ship) {
+    void dataShip() {
 
-        if (ship.crew.size() > 0) {
-            System.out.println(name + " has one Captain and " + (ship.crew.size()-1) + " pirates on board");
+        if (crew.size() > 0) {
+            System.out.println(name + " has one Captain and " + (crew.size() - 1) + " pirates on board");
             System.out.println("The intoxication of " + name + "'s Captain is " + crew.get(0).intoxiCounter);
-            System.out.println("The battlescore of " + name + "is " + battlescore(ship));
+            System.out.println("The battlescore of " + name + " is " + battleScore());
         } else {
             System.out.println(name + " has no crew!");
         }
