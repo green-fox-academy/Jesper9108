@@ -1,0 +1,45 @@
+body {
+    background: darkblue;
+}
+
+table {
+    border-collapse: collapse;
+    border-style: hidden;
+    width: 90%;
+    line-height: 50px;
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+
+}
+
+td {
+    text-align: left;
+    padding-left: 3%;
+    color: #3d3d3d;
+    border: 2px solid lightslategray;
+}
+
+th {
+    text-align: left;
+    background: black;
+    color: #cccccc;
+    padding-left: 3%;
+    border-bottom: 4px solid lightslategray;
+}
+
+tr:nth-child(2n+1) {
+    background: lightgray;
+}
+
+tr:nth-child(2n+2) {
+    background: darkgrey;
+}
+
+th:first-child {
+    border-radius: 10px 0 0 0;
+    border-right: 2px solid lightslategray;
+}
+
+th:last-child {
+    border-radius: 0 10px 0 0;
+}
