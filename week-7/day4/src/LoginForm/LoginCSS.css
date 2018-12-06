@@ -1,0 +1,82 @@
+body {
+    background: silver;
+    padding: 10px;
+    font-family: "Segoe UI";
+    alignment: center;
+}
+
+form {
+
+    width: 500px;
+    height: 350px;
+    margin: 40px auto;
+    padding: 40px;
+    color: #3d3d3d;
+    background: lightgray;
+}
+
+label {
+    font-size: 12px;
+
+
+}
+
+input[type=submit] {
+    width: 120px;
+    height: 40px;
+    padding: 3px;
+    border: 0px;
+    text-align: center;
+    font-size: 15px;
+    background: black;
+    color: #cccccc;
+    border-radius: 20px;
+    margin: 40px 0px 0px 0px;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    display: block;
+    height: 30px;
+    border-radius: 2px;
+    -webskit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 0px 5px 0px;
+    border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid greenyellow;
+}
+
+input[type=password] {
+    background-image: url(https://static.thenounproject.com/png/5968-200.png);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: 97%;
+}
+
+#login {
+    width: 100%;
+    text-align: left;
+    font-size: 25px;
+}
+
+#pass {
+    width: 100%;
+    text-align: right;
+    font-size: 10px;
+}
+
+::placeholder {
+    opacity: 50%;
+}
+
+
+
