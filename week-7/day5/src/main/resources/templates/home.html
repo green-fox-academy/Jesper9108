@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <a href="/home"><h1>Zsolt's Shop</h1></a>
+    </header>
+    <nav>
+        <button type="button" onclick="location.href='onlyavailable'">Only available</button>
+        <button type="button" onclick="location.href='cheapestfirst'">Cheapest first</button>
+        <button type="button" onclick="location.href='containsnike'">Contains nike</button>
+        <button type="button" onclick="location.href='averagestock'">Average stock</button>
+        <button type="button" onclick="location.href='mostexpensive'">Most expensive available</button>
+        <!--<div>-->
+        <input type="text" placeholder="...enter parameter">
+        <button type="button" onclick="location.href='search'">Search</button>
+        <!--</div>-->
+
+    </nav>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity of stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.getName()}"></td>
+        <td th:text="${item.getDescription()}"></td>
+        <td th:text="${item.getPrice()} + ' $'"></td>
+        <td th:text="${item.getQuantity()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

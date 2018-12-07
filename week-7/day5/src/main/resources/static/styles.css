@@ -1,0 +1,93 @@
+body {
+    width: 800px;
+    background: ghostwhite;
+    font-family: "Exo 2";
+    margin: 10px;
+}
+
+.wrapper {
+    width: 800px;
+    height: auto;
+    background: lightgray;
+    border-radius: 10px 10px 0 0;
+    margin: 0px;
+}
+
+h1 {
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+nav {
+    width: inherit;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input[type=submit] {
+    font-family: inherit;
+    font-size: 15px;
+    height: 2.2em;
+    margin: 0px 7px 0px 7px;
+    background: crimson;
+    color: ghostwhite;
+    text-transform: uppercase;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type=text] {
+    font-size: 15px;
+    height: 2.2em;
+    width: 80%;
+    border: 1px solid crimson;
+    border-radius: 5px;
+    margin: 5px 0 5px 0;
+    padding-left: 10px;
+}
+
+input[type=text]:focus{
+    outline: none;
+    border: 2px solid #3b5998;
+}
+
+table {
+    width: 800px;
+    background: lightgray;
+    text-align: left;
+    color: ghostwhite;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+th {
+    background: #3b5998;
+    border-radius: 3px;
+    height: 1.5em;
+    padding-left: 15px;
+}
+
+td {
+    background: #75b1d6;
+    padding-left: 15px;
+    border-radius: 3px;
+}
+button{
+    font-family: inherit;
+    font-size: 15px;
+    height: 2.2em;
+    margin: 0px 7px 0px 7px;
+    background: crimson;
+    color: ghostwhite;
+    text-transform: uppercase;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
