@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new account</title>
+</head>
+
+<body>
+    <form action="#" th:action="@{/create}" th:object="${bankacc}" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" th:field="*{name}" required>
+        <label for="balance">Balance</label>
+        <input type="text" name="balance" id="balance" th:field="*{balance}" required>
+        <label for="type">Balance</label>
+        <input type="text" name="type" id="type" th:field="*{animalType}" required>
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

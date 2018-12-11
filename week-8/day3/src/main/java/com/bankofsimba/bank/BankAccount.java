@@ -15,6 +15,22 @@ public class BankAccount {
         this.animalType = animalType;
     }
 
+    public BankAccount() {
+        this.id = nextID++;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBalance(long balance) {
+        this.balance = balance;
+    }
+
+    public void setAnimalType(String animalType) {
+        this.animalType = animalType;
+    }
+
     public int getId() {
         return id;
     }
