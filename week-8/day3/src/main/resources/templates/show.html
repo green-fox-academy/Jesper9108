@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Account home page</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr th:each="acc :${account}">
+            <td th:text="${acc.getId()}"></td>
+            <td th:text="${acc.getName()}"></td>
+            <td th:text="${acc.getBalance() + ' Zebra'}"></td>
+            <td th:text="${acc.getAnimalType()}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
