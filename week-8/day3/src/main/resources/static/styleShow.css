@@ -1,0 +1,45 @@
+body{
+    font-family: "Segoe UI";
+    padding: 15px;
+}
+.container{
+    background: lightgray;
+    width: 500px;
+    padding: 15px;
+}
+
+h1{
+    margin-top: 0px;
+}
+
+table{
+    border-collapse: collapse;
+    padding: 10px;
+    color: #35424a;
+}
+
+td{
+    padding: 10px;
+}
+
+tr td:first-child{
+    border-right: 1px solid #35424a;
+    font-weight: bold;
+}
+
+td:hover{
+    font-weight: bold;
+}
+
+button{
+    margin-top: 30px;
+    background: #35424a;
+    color: white;
+    height: 30px;
+    width: auto;
+    padding: 0 10px 0 10px;
+    border: 0px;
+    border-radius: 15px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}

@@ -1,22 +1,15 @@
 package com.bankofsimba.bank;
 
 public class BankAccount {
-    private static int nextID = 0;
 
-    private int id;
     private String name;
     private long balance;
     private String animalType;
 
     public BankAccount(String name, long balance, String animalType) {
-        this.id = nextID++;
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
-    }
-
-    public BankAccount() {
-        this.id = nextID++;
     }
 
     public void setName(String name) {
@@ -31,8 +24,8 @@ public class BankAccount {
         this.animalType = animalType;
     }
 
-    public int getId() {
-        return id;
+    public BankAccount() {
+
     }
 
     public String getName() {
