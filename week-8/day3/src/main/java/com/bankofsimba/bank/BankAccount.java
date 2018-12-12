@@ -1,7 +1,7 @@
 package com.bankofsimba.bank;
 
 public class BankAccount {
-
+    private static int nextID = 1;
     private String name;
     private long balance;
     private String animalType;

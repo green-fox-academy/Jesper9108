@@ -7,15 +7,26 @@
 </head>
 <body>
 <div class="container">
-    <h1>Account info</h1>
-    <table>
-        <tr th:each="acc :${account}">
-            <td th:text="${accStat.count}"></td>
-            <td th:text="${acc.getName()}"></td>
-            <td th:text="${acc.getBalance() + ' Zebra'}"></td>
-            <td th:text="${acc.getAnimalType()}"></td>
-        </tr>
-    </table>
+    <h1>Accounts</h1>
+    <form action="#" th:action="@{/show}" method="post" th:method="POST" th:object="${balancemod}">
+        <table>
+            <thead>
+            <th></th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Type</th>
+            </thead>
+            <tr th:each="acc :${account}">
+                <td th:text="${accStat.count}"></td>
+                <td th:text="${acc.getName()}"></td>
+                <td th:text="${#numbers.formatDecimal(acc.getBalance(),0,2) + ' Zebra'}"></td>
+                <td th:text="${acc.getAnimalType()}"></td>
+                <td><input type="checkbox" th:field="*{checkboxValues}" th:value="${acc.getName()}"></td>
+            </tr>
+        </table>
+        <button type="submit">Raise balance</button>
+    </form>
+
     <button onclick="location.href='/create'">Create new account</button>
 </div>
 </body>
