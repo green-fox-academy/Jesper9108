@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>GFA Students</title>
+</head>
+<body>
+<p th:text="${count}"></p>
+<ul>
+    <li th:each="i : ${studentlist}" th:text="${i}"></li>
+</ul>
+
+</body>
+</html>

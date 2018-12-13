@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding new student</title>
+</head>
+<body>
+<h1>Check if student is in the list</h1>
+
+<form action="#" method="get">
+    <label>Name</label>
+    <input type="text" th:object="${student}" name="student">
+
+</form>
+<p th:if="${student} != ''" th:text="${contains} ? 'Student is in list' : 'Student is not in the list'"></p>
+</body>
+</html>
