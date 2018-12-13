@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trickcenter</title>
+</head>
+<body>
+<form action="#" method="post">
+
+
+    <select name="tricks">
+        <option th:each="trick : ${tricklist}"></option>
+    </select>
+</form>
+
+</body>
+</html>
