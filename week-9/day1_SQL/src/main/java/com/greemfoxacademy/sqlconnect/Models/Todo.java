@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -14,6 +16,7 @@ public class Todo {
     private String title;
     private boolean urgent = false;
     private boolean done = false;
+    private Date creationDate = new Date();
 
     public Todo(String title, boolean urgent, boolean done) {
         this.title = title;
@@ -22,6 +25,10 @@ public class Todo {
     }
 
     public Todo() {
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
     }
 
     public void setId(long id) {
@@ -65,4 +72,5 @@ public class Todo {
                 ", done=" + done +
                 '}';
     }
+
 }

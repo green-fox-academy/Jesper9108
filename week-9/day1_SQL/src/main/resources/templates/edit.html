@@ -5,7 +5,7 @@
     <title>Edit todo</title>
 </head>
 <body>
-<form action="edit" method="post" th:object="${todoEdit}">
+<form th:action="@{edit}"  method="post" th:object="${todoEdit}">
     <label>Todo description</label>
     <input type="text" th:field="*{title}">
     <label>Urgent</label>
@@ -17,3 +17,5 @@
 </form>
 </body>
 </html>
+
+<!--action="edit"-->
