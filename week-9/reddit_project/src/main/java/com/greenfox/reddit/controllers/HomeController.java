@@ -23,25 +23,30 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model, @RequestParam(defaultValue = "0") int page) {
         model.addAttribute("posts", postService.findAllPaged(page));
-        model.addAttribute("currentPage", page);
+        model.addAttribute("page", page);
         return "index";
     }
 
     @GetMapping("{id}/scoreup")
-    public String upscore(@PathVariable long id) {
+    public String upscore(@PathVariable long id, @RequestParam String page) {
         postService.incrementPostScore(id);
-        return "redirect:/#";
+        return "redirect:/?page="+page;
     }
 
     @GetMapping("{id}/scoredown")
-    public String downscore(@PathVariable long id) {
+    public String downscore(@PathVariable long id, @RequestParam String page) {
         postService.decrementPostScore(id);
-        return "redirect:/#";
+        return "redirect:/?page="+page;
     }
 
+//    @GetMapping("/addpost")
+//    public String createPost(Model model, @ModelAttribute("newpost") Post post) {
+//        model.addAttribute("newpost", post);
+//        return "addpost";
+//    }
+
     @GetMapping("/addpost")
-    public String createPost(Model model, @ModelAttribute("newpost") Post post) {
-        model.addAttribute("newpost", post);
+    public String createPost(){
         return "addpost";
     }
 
@@ -50,4 +55,5 @@ public class HomeController {
         postService.savePost(post);
         return "redirect:/";
     }
+
 }

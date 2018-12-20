@@ -9,12 +9,12 @@
 <body>
 <div class="container-fluid">
     <div class="form-group">
-        <form th:action="addpost" method="post" th:object="${newpost}">
+        <form th:action="addpost" method="post">
             <label for="title">Title</label>
-            <input class="form-control" type="text" id="title" th:field="*{title}">
+            <input class="form-control" type="text" id="title" name="title">
             <label for="body">Content</label>
             <!--<input type="text" id="body" th:field="*{body}">-->
-            <textarea id="body" class="form-control" th:field="*{body}"></textarea>
+            <textarea id="body" class="form-control" name="body"></textarea>
             <input type="submit" class="btn btn-success">
         </form>
     </div>

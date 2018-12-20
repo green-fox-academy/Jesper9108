@@ -24,8 +24,8 @@ Now is: <p th:text="${#execInfo.now.time}">time</p>
         <tbody>
         <tr th:each="post : ${posts}">
             <td th:text="${post.getScore()}"></td>
-            <td><a th:href="|${post.getId()}/scoreup|">+</a></td>
-            <td><a th:href="|${post.getId()}/scoredown|">-</a></td>
+            <td><a th:href="|${post.getId()}/scoreup?page=${page}|">+</a></td>
+            <td><a th:href="|${post.getId()}/scoredown?page=${page}|">-</a></td>
             <td th:text="${post.getTitle()}"></td>
             <td th:text="${post.getBody()}"></td>
             <td th:text="${post.getDate()}"></td>

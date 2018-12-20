@@ -26,6 +26,7 @@ public class Post {
     }
 
     public Post() {
+        this.date = new Date();
     }
 
     public long getId() {
