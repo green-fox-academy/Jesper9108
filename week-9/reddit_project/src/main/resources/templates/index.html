@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Blog</h1>
+Now is: <p th:text="${#execInfo.now.time}">time</p>
+
+
+<div class="container-fluid">
+    <table class="table table-striped">
+        <thead>
+        <th>Score</th>
+        <th></th>
+        <th></th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Creation date</th>
+        <th>User</th>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${posts}">
+            <td th:text="${post.getScore()}"></td>
+            <td><a th:href="|${post.getId()}/scoreup|">+</a></td>
+            <td><a th:href="|${post.getId()}/scoredown|">-</a></td>
+            <td th:text="${post.getTitle()}"></td>
+            <td th:text="${post.getBody()}"></td>
+            <td th:text="${post.getDate()}"></td>
+            <td th:text="${post.getUser() != null} ? ${post.getUser()} : 'No user yet'"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container-fluid">
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-end">
+            <li class="page-item" th:each="i : ${#numbers.sequence(0,posts.totalPages-1)}">
+                <a th:href="@{/(page=${i})}" th:text="${i+1}" class="page-link"></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div>
+    <a th:href="addpost" class="btn btn-default">Create post</a>
+</div>
+
+<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>

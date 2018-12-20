@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create your own post!</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="form-group">
+        <form th:action="addpost" method="post" th:object="${newpost}">
+            <label for="title">Title</label>
+            <input class="form-control" type="text" id="title" th:field="*{title}">
+            <label for="body">Content</label>
+            <!--<input type="text" id="body" th:field="*{body}">-->
+            <textarea id="body" class="form-control" th:field="*{body}"></textarea>
+            <input type="submit" class="btn btn-success">
+        </form>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
